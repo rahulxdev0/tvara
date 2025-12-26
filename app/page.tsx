@@ -1,6 +1,7 @@
 "use client";
 import BlurText from "@/components/BlurText";
 import MagnetLines from "@/components/MagnetLines";
+import Link from "next/link";
 
 const page = () => {
   const handleAnimationComplete = () => {
@@ -27,6 +28,11 @@ const page = () => {
         baseAngle={0}
         style={{ margin: "2rem auto" }}
       />
+      <div className="">
+        <Link href="/gemini" className="text-blue-600 underline">
+          Go to Gemini AI Playground
+        </Link>
+      </div>
     </div>
   );
 };

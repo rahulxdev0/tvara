@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tvara
 
-## Getting Started
+A Next.js project featuring interactive animations and AI integration with Google's Gemini.
 
-First, run the development server:
+## What I've Done
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Project Setup
+- Initialized a Next.js 16 project with TypeScript
+- Configured Tailwind CSS for styling
+- Set up ESLint for code linting
+- Added PostCSS configuration
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Dependencies Installed
+- **@google/genai**: For integrating Google's Gemini AI
+- **motion**: Framer Motion for animations
+- **lucide-react**: Icon library
+- **class-variance-authority**, **clsx**, **tailwind-merge**: Utility for conditional styling
+- **tw-animate-css**: Additional animations
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Components Created
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### BlurText Component
+- Animated text component that blurs in from top or bottom
+- Supports animation by words or letters
+- Uses Framer Motion for smooth transitions
+- Configurable delay, direction, and easing
 
-## Learn More
+#### MagnetLines Component
+- Interactive grid of lines that rotate based on mouse position
+- Customizable rows, columns, colors, and sizes
+- Creates a magnetic effect following the cursor
 
-To learn more about Next.js, take a look at the following resources:
+### Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### Home Page (`/`)
+- Displays the BlurText component with sample text
+- Shows the MagnetLines component in a grid
+- Includes a link to the Gemini AI playground
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### Gemini Page (`/gemini`)
+- Clean UI for interacting with Gemini AI
+- Textarea for input prompts
+- Button to generate responses
+- Displays AI responses in a styled card
 
-## Deploy on Vercel
+### API Routes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### `/api/gemini`
+- POST endpoint that accepts a prompt
+- Uses Google GenAI SDK to generate content
+- Returns the AI response as JSON
+- Requires `GEMINI_API_KEY` environment variable
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Configuration
+- TypeScript configuration for Next.js
+- Tailwind CSS setup with custom utilities
+- ESLint configuration for code quality
+
+## Running the Project
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Set up environment variables:
+   Create a `.env.local` file with:
+   ```
+   GEMINI_API_KEY=your_api_key_here
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Features
+- Interactive animations on the home page
+- AI-powered chat interface with Gemini
+- Responsive design with Tailwind CSS
+- TypeScript for type safety
+- Modern React with hooks and client components
